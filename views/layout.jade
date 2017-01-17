@@ -1,0 +1,70 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    title Gaming7 &mdash; Games and news for Xbox &amp; PlayStation
+    meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no')
+    meta(name='format-detection', content='no')
+    link(rel='icon', type='icon', href='/favicon.ico')
+    meta(name='description', content='Filter games by genre, sort by date and score, search by name. All at the speed of light. Watch videos and screenshots, read the reviews and plenty more game info. Follow games you like and get a notification when their price drops. Sounds good? Give it a try now, it\'s free!')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    link(rel='apple-touch-icon', sizes='57x57', href='/apple-icon-57x57.png')
+    link(rel='apple-touch-icon', sizes='60x60', href='/apple-icon-60x60.png')
+    link(rel='apple-touch-icon', sizes='72x72', href='/apple-icon-72x72.png')
+    link(rel='apple-touch-icon', sizes='76x76', href='/apple-icon-76x76.png')
+    link(rel='apple-touch-icon', sizes='114x114', href='/apple-icon-114x114.png')
+    link(rel='apple-touch-icon', sizes='120x120', href='/apple-icon-120x120.png')
+    link(rel='apple-touch-icon', sizes='144x144', href='/apple-icon-144x144.png')
+    link(rel='apple-touch-icon', sizes='152x152', href='/apple-icon-152x152.png')
+    link(rel='apple-touch-icon', sizes='180x180', href='/apple-icon-180x180.png')
+    link(rel='icon', type='image/png', sizes='192x192', href='/android-icon-192x192.png')
+    link(rel='icon', type='image/png', sizes='32x32', href='/favicon-32x32.png')
+    link(rel='icon', type='image/png', sizes='96x96', href='/favicon-96x96.png')
+    link(rel='icon', type='image/png', sizes='16x16', href='/favicon-16x16.png')
+    meta(name='msapplication-TileColor', content='#cf2026')
+    meta(name='msapplication-TileImage', content='/ms-icon-144x144.png')
+    meta(name='theme-color', content='#cf2026')
+    style.
+      html {
+        height: 100%;
+        font-family: 'Open Sans', sans-serif;
+        -webkit-text-size-adjust: 100%;
+      }
+      body {
+        min-height: 100%;
+      }
+    // Facebook
+    meta(property='og:site_name', content='Gaming7')
+    meta(property='og:title', content='All the Xbox One and Playstation 4 games, in one super fast app')
+    meta(property='og:description', content="Filter games by genre, sort by date and score, search by name. All at the speed of light. Watch videos and screenshots, read the reviews and plenty more game info. Follow games you like and get a notification when their price drops. Sounds good? Give it a try now, it's free!")
+    meta(property='og:url', content='http://www.gaming7.com')
+    meta(property='og:image', content='https://lh3.googleusercontent.com/Ty7kl5C11-FxkZtfygATOtkL0AhwEyj35GGNInQwT50llFQIqTDNOpf-w8WoRO1vXfiHfwFHqysRN--LZdofaKzGaQet')
+    meta(property='og:type', content='website')
+    // Twitter
+    meta(name='twitter:card', content='app')
+    meta(name='twitter:title', content='Gaming7 - All the Xbox One and Playstation 4 games, in one super fast app')
+    meta(name='twitter:description', content="Filter games by genre, sort by date and score, search by name. All at the speed of light. Watch videos and screenshots, read the reviews and plenty more game info. Follow games you like and get a notification when their price drops. Sounds good? Give it a try now, it's free!")
+    meta(name='twitter:image:src', content='https://lh3.googleusercontent.com/Ty7kl5C11-FxkZtfygATOtkL0AhwEyj35GGNInQwT50llFQIqTDNOpf-w8WoRO1vXfiHfwFHqysRN--LZdofaKzGaQet')
+    meta(name='twitter:domain', content='http://www.gaming7.com')
+    meta(name='twitter:app:name:iphone', content='Gaming7')
+    meta(name='twitter:app:id:iphone', content='1117338349')
+    meta(name='twitter:app:name:ipad', content='Gaming7')
+    meta(name='twitter:app:id:ipad', content='1117338349')
+    meta(name='twitter:app:name:googleplay', content='Gaming7')
+    meta(name='twitter:app:id:googleplay', content='com.gaming7.app')
+    // Apple Smart App Banner
+    meta(name='apple-itunes-app', content='app-id=1117338349,\
+    affiliate-data=1001l5Yq')
+    link(rel='manifest', href='/manifest.json')
+    link(href='https://fonts.googleapis.com/css?family=Roboto:400,700,800', rel='stylesheet')
+    link(href='https://fonts.googleapis.com/icon?family=Material+Icons', rel='stylesheet')
+    link(rel='stylesheet', href='/stylesheets/reset.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    header
+      h3 
+       a(href='/') Gaming7
+    script(src='./scripts/utils.js')
+    div#app
+      block content
+    footer
