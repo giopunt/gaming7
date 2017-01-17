@@ -2,38 +2,46 @@ extends layout
 
 mixin BannerIMG(href)
   li
-    img(src=href, height='130px')
+    img(src=href, height=img_h+'px')
 
 block content
   main#game-page
-    #banner
+    - var img_h = 130;
+    - var scoring = data.score > 75 ? 'green' : (data.score >= 55 ? 'yellow' : 'ok' );
+    #banner.clearfix
       ul(style='width:928px;')
-        +BannerIMG(data.banner.href)
+        if data.banner.href
+          +BannerIMG(data.banner.href)
         each value, key in data.media
-          +BannerIMG(value.thumbnail.href)
+          if value.thumbnail
+            +BannerIMG(value.thumbnail.href)
     #details
       h1.title= data.title
       p.publisher= data.publisher + ' ›'
       p.genres= data.genres[0]
-      - var scoring = data.score > 75 ? 'green' : (data.score >= 55 ? 'yellow' : 'ok' );
       div(class='score ' + scoring)
         span Score 
-        span.points= data.score
+        span.points= data.score || '--'
     #charts
-      div.pegi= data.contentRating
+      if data.contentRating != 'notAvailable'
+        div(class='pegi ' + data.contentRating)= data.contentRating.replace('pegi', '')
+      else
+        div(class='pegi pending') 
+          span RP
       each value, key in data.ranking
         div.ranking
           span.rank= '#' + value.rank
           span= value.name
-    #buying
+    #buying.clearfix
       each value, key in data.storeProducts
-        a#buy(href=value.href)= 'Buy | ' + value.price.currency + value.price.value
+        a#buy(href=value.href, target='_blank')= 'Buy | ' + value.price.currency + value.price.value
+      if !data.storeProducts[0]
+        a#buy(href='https://www.amazon.co.uk/s/field-keywords=' + encodeURI(data.title) , target='_blank') Buy
       a.linktoreviews(href='#reviews')= 'Reviews ('+data.reviews.length+')'
-    #description!= data.summary
+    #description= data.description
     #reviews
       p.subtitle Reviews
       each value, key in data.reviews
-        - var scoring = value.score > 75 ? 'green' : (value.score >= 55 ? 'yellow' : 'ok' );
         div(class='review '+scoring)
           div.source
             a(href=value.href)= value.source

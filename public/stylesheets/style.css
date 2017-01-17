@@ -34,7 +34,6 @@ header h3, header a {
 }
 
 #game-page #banner {
-    height: 130px;
     white-space: nowrap;
 	overflow-y: hidden;
 	overflow-x: scroll;
@@ -46,7 +45,6 @@ header h3, header a {
 }
 
 #game-page #banner ul {
-    height: 130px;
     width: 699px;
     margin: 0 auto;
     white-space: nowrap;
@@ -56,14 +54,18 @@ header h3, header a {
 }
 
 #game-page #banner ul li {
-    height: 130px;
     width: 232px;
     display: inline;
+    margin-left: 2px;
+}
+
+#game-page #banner, #game-page #banner ul, #game-page #banner ul li {
+    height: 130px;
 }
 
 #game-page #details {
     background: #fff;
-    color: #464646;
+    color: #000;
     padding: 15px 15px 0;
     position: relative;
 }
@@ -88,6 +90,11 @@ header h3, header a {
     text-align: center;
     bottom: -40px;
     right: 5px;
+}
+
+#game-page #details .score.ok {
+ background: #303030;
+ color: #fff;
 }
 
 #game-page #details .score.green {
@@ -123,10 +130,42 @@ header h3, header a {
     padding: 10px;
     float: left;
     margin: 0 5px;
+    width: 30px;
 }
 
 #game-page #charts div.pegi {
-    width: 30px;
+    padding: 10px 0;
+    line-height: 33px;
+    background-color: #fff;
+    text-align: center;
+    width: 50px;
+}
+
+#game-page #charts div.pegi, #game-page #charts div.pegi span {
+    font-size: 35px;
+    font-weight: bold;
+}
+
+#game-page #charts div.pegi.pegi3, #game-page #charts div.pegi.pegi7 {
+    background-color: #a3d643;
+}
+
+#game-page #charts div.pegi.pegi12, #game-page #charts div.pegi.pegi16 {
+    background-color: #fcab2e;
+}
+
+#game-page #charts div.pegi.pegi18 {
+    background-color: #ef3633;
+}
+
+#game-page #charts div.pegi.pending {
+    color: #000;
+}
+
+#game-page #charts div.pegi span {
+    font-size: 45px;
+    transform: rotate(-20deg);
+    letter-spacing: -4px;
 }
 
 #game-page #charts div.ranking {
@@ -146,18 +185,13 @@ header h3, header a {
 
 #game-page #buying {
     padding: 0 10px;
-}
-
-#game-page #buying::after {
-    content: "";
-    width: 1px;
-    height: 1px;
-    clear: both;
+    margin: 0 auto;
+    max-width: 400px;
 }
 
 #game-page #buy, #game-page a#buy {
     background: #cf2026;
-    width: 55%;
+    width: 45%;
     padding: 17px;
     color: #fff;
     display: inline-block;
@@ -175,18 +209,24 @@ header h3, header a {
     font-weight: 600;
     text-align: center;
     display: inline-block;
-    width: 23%;
-    padding: 17px;
+    width: 29%;
+    padding: 17px 15px;
     background: #3672fe;
     float: right;
     margin-bottom: 10px;
     font-size: 14px;
 }
 
+#game-page #buy, #game-page a#buy, #game-page .linktoreviews {
+    height: 14px;
+}
+
 #description {
     padding: 10px;
     font-size: 14px;
     letter-spacing: 0.4px;
+    line-height: 20px;
+    white-space: pre-line;
 }
 
 #game-page #reviews .review {
@@ -254,3 +294,17 @@ header h3, header a {
     font-weight: 600;
     padding: 10px
 }
+
+.clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+}
+.clearfix { display: inline-block; }
+/* start commented backslash hack \*/
+* html .clearfix { height: 1%; }
+.clearfix { display: block; }
+/* close commented backslash hack */
