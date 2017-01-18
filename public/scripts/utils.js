@@ -44,3 +44,30 @@ function getParameterByName(name, url) {
     if (!results[2]) return '';
     return decodeURIComponent(results[2].replace(/\+/g, " "));
 }
+
+// Utils for localstorage
+
+var Storage = function () {};
+
+Storage.prototype.get = function ( key ) {
+    try {
+        return JSON.parse( localStorage.getItem( key ) );
+    }
+    catch (e) {
+        return localStorage.getItem( key );
+    }
+};
+
+Storage.prototype.set = function ( key, value ) { // key[String], value[Object or String]
+    //console.log('val is type: ' + typeof value);
+    if ( typeof value === 'function' ) {
+        throw new TypeError('Functions can not be saved');
+    }
+    localStorage[key] = typeof value === 'object' ? JSON.stringify(value) : value;
+};
+
+Storage.prototype.remove = function ( key ) {
+    localStorage.removeItem(key);
+};
+
+var storage = new Storage();

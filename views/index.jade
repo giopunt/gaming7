@@ -1,5 +1,20 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  main#list-page
+    h1.title Top 10 Games
+    p.desc Our top 10 list of games
+    ul.game-list
+      each value, key in data
+        if key < 10
+          li.game.clearfix
+            a.thumbnail(href= "/games/" + value.id + "/" + encodeURI(value.title) )
+              img(src=value.thumbnail.href, width='100px')
+            .info
+              a(href= "/games/" + value.id + "/" + encodeURI(value.title) )
+                h3.title= value.title
+                - var date = new Date(value.releaseDate)
+                p.publisher= value.publisher 
+                p.release-date!= 'Released <b>' + date.getMonth() + ' - ' + date.getFullYear() + '</b>'
+                p.genres= value.genres[0]
+            .score= value.score

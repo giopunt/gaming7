@@ -4,6 +4,10 @@ html, body {
     color: #fff;
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
 header {
     background: #cf2026;
     color: #ffffff;
@@ -28,9 +32,63 @@ header h3, header a {
 }
 
 #app {
-    padding-top: 45px;
-    max-width: 60em;
+    padding-top: 47px;
+    max-width: 690px;
     margin: 0 auto;
+}
+
+#list-page h1.title {
+    padding: 10px;
+}
+
+#list-page p.desc {
+    font-weight: 300;
+    font-size: 14px;
+    padding: 5px 10px;
+}
+
+#list-page .game-list .game {
+    border-bottom: 1px solid #303030;
+}
+
+#list-page .game-list .game b {
+    font-weight: 400;
+}
+
+#list-page .game-list .game a {
+    color: #fff;
+    text-decoration: none;
+}
+
+#list-page .game-list .game .thumbnail {
+    margin: 10px;
+    float: left;
+    width: 100px;
+    height: 100px;
+    background: #303030;
+}
+
+#list-page .game-list .game .info {
+    float: left;
+    width: 60%;
+}
+
+#list-page .game-list .game .title {
+    padding: 10px 0;
+    font-weight: bold;
+    font-size: 13px;
+    line-height: 16px;
+}
+
+#list-page .game-list .game .info p{
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 16px;
+    padding-bottom: 10px;
+}
+
+#list-page .game-list {
+    margin: 10px 0 30px;
 }
 
 #game-page #banner {
@@ -38,13 +96,22 @@ header h3, header a {
 	overflow-y: hidden;
 	overflow-x: scroll;
 	-webkit-overflow-scrolling: touch;
+    position: relative;
 }
 
-::-webkit-scrollbar {
-  display: none;
-}
 
-#game-page #banner ul, #game-page #banner ul li {
+ #game-page #banner .more_img  {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #fff;
+    font-size: 40px;
+    font-family: serif;
+ }
+
+
+#list-page ul, #list-page ul li, #game-page #banner ul, #game-page #banner ul li {
     list-style: none;
 }
 
@@ -297,6 +364,17 @@ header h3, header a {
     font-size: 16px;
     font-weight: 600;
     padding: 10px
+}
+
+footer {
+    background: #303030;
+    padding: 20px 10px;
+    font-size: 12px;
+}
+
+footer .copy {
+    max-width: 690px;
+    margin: 0 auto;
 }
 
 .clearfix:after {

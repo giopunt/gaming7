@@ -62,9 +62,14 @@ html
     link(rel='stylesheet', href='/stylesheets/style.css')
   body
     header
-      h3 
+      h3
        a(href='/') Gaming7
-    script(src='./scripts/utils.js')
+    script(src='/scripts/utils.js')
     div#app
       block content
     footer
+      .copy
+        - var date = new Date();
+        - var y = date.getFullYear();
+        Copyright= '© 2016 - ' + y + ' Gaming7 Ltd. All rights reserved.'
+

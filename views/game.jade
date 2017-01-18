@@ -7,14 +7,16 @@ mixin BannerIMG(href)
 block content
   main#game-page
     - var img_h = 130;
+    - var img_w = 232;
     - var scoring = data.score > 75 ? 'green' : (data.score >= 55 ? 'yellow' : 'ok' );
     #banner.clearfix
-      ul(style='width:928px;')
+      ul
         if data.banner.href
           +BannerIMG(data.banner.href)
         each value, key in data.media
           if value.thumbnail
             +BannerIMG(value.thumbnail.href)
+      .more_img ›
     #details
       h1.title= data.title
       p.publisher= data.publisher + ' ›'
@@ -36,9 +38,11 @@ block content
       each value, key in data.storeProducts
         a#buy(href=value.href, target='_blank')= 'Buy | ' + value.price.currency + value.price.value
       if !data.storeProducts[0]
-        a#buy(href='https://www.amazon.co.uk/s/field-keywords=' + encodeURI(data.title) , target='_blank') Buy
+        - var stores = { 'US': '.com', 'GB': '.co.uk' }
+        - var store = stores[country]
+        a#buy(href='https://www.amazon' + store + '/s/field-keywords=' + encodeURI(data.title) , target='_blank') Buy
       a.linktoreviews(href='#reviews')= 'Reviews ('+data.reviews.length+')'
-    #description= data.summary
+    #description= data.description
     #reviews
       p.subtitle Reviews
       if !data.reviews.length
