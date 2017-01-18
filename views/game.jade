@@ -20,13 +20,13 @@ block content
       p.publisher= data.publisher + ' ›'
       p.genres= data.genres[0]
       div(class='score ' + scoring)
-        span Score 
+        span Score
         span.points= data.score || '--'
     #charts
       if data.contentRating != 'notAvailable'
         div(class='pegi ' + data.contentRating)= data.contentRating.replace('pegi', '')
       else
-        div(class='pegi pending') 
+        div(class='pegi pending')
           span RP
       each value, key in data.ranking
         div.ranking
@@ -38,9 +38,12 @@ block content
       if !data.storeProducts[0]
         a#buy(href='https://www.amazon.co.uk/s/field-keywords=' + encodeURI(data.title) , target='_blank') Buy
       a.linktoreviews(href='#reviews')= 'Reviews ('+data.reviews.length+')'
-    #description= data.description
+    #description= data.summary
     #reviews
       p.subtitle Reviews
+      if !data.reviews.length
+        div.review.empty
+          div.summary= 'no reviews for this game yet, sorry :('
       each value, key in data.reviews
         div(class='review '+scoring)
           div.source

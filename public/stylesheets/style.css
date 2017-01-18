@@ -40,6 +40,10 @@ header h3, header a {
 	-webkit-overflow-scrolling: touch;
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
 #game-page #banner ul, #game-page #banner ul li {
     list-style: none;
 }
@@ -163,13 +167,13 @@ header h3, header a {
 }
 
 #game-page #charts div.pegi span {
-    font-size: 45px;
+    font-size: 40px;
     transform: rotate(-20deg);
     letter-spacing: -4px;
 }
 
 #game-page #charts div.ranking {
-    width: 23%;    
+    width: 23%;
 }
 
 #game-page #charts div span {
@@ -266,7 +270,7 @@ header h3, header a {
     color: #000;
 }
 
-#game-page #reviews .review:after {
+#game-page #reviews .review:not(.empty):after {
     content: "";
     width: 0;
     height: 0;
