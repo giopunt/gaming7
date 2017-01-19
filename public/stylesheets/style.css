@@ -33,7 +33,7 @@ header h3, header a {
 }
 
 #app {
-    padding-top: 47px;
+    padding-top: 45px;
     max-width: 690px;
     margin: 0 auto;
 }
@@ -117,7 +117,6 @@ header h3, header a {
 }
 
 #game-page #banner ul {
-    width: 699px;
     margin: 0 auto;
     white-space: nowrap;
 	overflow-y: hidden;

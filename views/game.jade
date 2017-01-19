@@ -1,7 +1,7 @@
 extends layout
 
-mixin BannerIMG(href)
-  li
+mixin BannerIMG(href, index)
+  li(id='bnr_' + index)
     img(src=href, height=img_h+'px')
 
 block content
@@ -12,11 +12,11 @@ block content
     #banner.clearfix
       ul
         if data.banner.href
-          +BannerIMG(data.banner.href)
+          +BannerIMG(data.banner.href, 0)
         each value, key in data.media
           if value.thumbnail
-            +BannerIMG(value.thumbnail.href)
-      .more_img ›
+            +BannerIMG(value.thumbnail.href, key)
+      .more_img(onclick='scrollImg()') ›
     #details
       h1.title= data.title
       p.publisher= data.publisher + ' ›'
@@ -55,3 +55,5 @@ block content
           div.summary
             a(href=value.href)= value.summary
           div.score= value.score
+  script(src='/scripts/libs/smoothscroll.js')
+  script(src='/scripts/game.js')
