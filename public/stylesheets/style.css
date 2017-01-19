@@ -9,7 +9,8 @@ html, body {
 }
 
 header {
-    background: #cf2026;
+    background: #af0c09;
+    background-image: url('/images/pattern.png');
     color: #ffffff;
     font-weight: 600;
     height: 45px;
